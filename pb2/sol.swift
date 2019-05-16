@@ -21,8 +21,7 @@ var a: [Int] = aTemp.split(separator: " ").map {
 guard a.count == n else { fatalError("Bad input") }
 
 for i in 0 ..< d {
-    a.append(a[0])
-    a.remove(at: 0)
+  a.append(a.removeFirst())
 }
 
 for i in 0 ..< n {
