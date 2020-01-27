@@ -5,14 +5,12 @@ func kangaroo(x1: Int, v1: Int, x2: Int, v2: Int) -> String {
     if x2 > x1 && v2 > v1 {
         return "NO"
     }
-    var a1 = x1, a2 = x2
-    while true {
-        if a1 == a2 {
+    for i in 0...10000 {
+        if x1 + (i * v1) == x2 + (i * v2) {
             return "YES"
         }
-        a1 += v1
-        a2 += v2
     }
+    return "NO"
 }
 
 let stdout = ProcessInfo.processInfo.environment["OUTPUT_PATH"]!
