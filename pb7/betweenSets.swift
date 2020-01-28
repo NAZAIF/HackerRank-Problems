@@ -13,10 +13,8 @@ func getTotalX(a: [Int], b: [Int]) -> Int {
     // Write your code here
     var count = 0
     for i in stride(from: a.sorted().last ?? 0, through: b.sorted().first ?? 0, by: 1) {
-        if checkValueFactorOf(arr: a, factor: i) {
-            if checkAllAreFactors(arr: b, factor: i) {
-                count += 1
-            }
+        if checkValueFactorOf(arr: a, factor: i) && checkAllAreFactors(arr: b, factor: i) {
+            count += 1
         }
     }
     return count
@@ -49,10 +47,10 @@ guard let firstMultipleInputTemp = readLine()?.replacingOccurrences(of: "\\s+$",
 let firstMultipleInput = firstMultipleInputTemp.split(separator: " ").map{ String($0) }
 
 guard let n = Int(firstMultipleInput[0])
-else { fatalError("Bad input") }
+    else { fatalError("Bad input") }
 
 guard let m = Int(firstMultipleInput[1])
-else { fatalError("Bad input") }
+    else { fatalError("Bad input") }
 
 guard let arrTemp = readLine()?.replacingOccurrences(of: "\\s+$", with: "", options: .regularExpression) else { fatalError("Bad input") }
 
