@@ -2,14 +2,16 @@ import Foundation
 
 // Complete the extraLongFactorials function below.
 func extraLongFactorials(n: Int) -> Void {
-    var result = [1]
-       for i in 2...n {
-           result = result.map { $0 * i }
-           result = carryAll(result)
-       }
-
-       print(result.map(String.init).joined())
-
+    if n == 1 {
+        print(1)
+    } else {
+        var result = [1]
+        for i in 2...n {
+            result = result.map { $0 * i }
+            result = carryAll(result)
+        }
+        print(result.map(String.init).joined())
+    }
 }
 
 func carryAll(_ arr: [Int]) -> [Int] {
